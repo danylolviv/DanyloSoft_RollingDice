@@ -41,10 +41,15 @@ class DrawDice {
 
     fun rollCustom(childCount: Int, diceContainer: LinearLayout, mainActivity: MainActivity) {
         var hisString = ""
+        hM.doubleCount = 0
         for (i in 1..childCount) {
 
             val b = ran.nextInt(6)
             val random = b + 1
+
+            if (childCount == 2){
+                hM.doubleCount += random
+            }
 
             hisString = hisString + random + ","
 
@@ -65,7 +70,7 @@ class DrawDice {
         rollHistory.setHorizontalGravity(2)
         histNumlist.forEach{n ->
             val imageView = ImageView(mainActivity)
-            imageView.layoutParams = LinearLayout.LayoutParams(100, 100)
+            imageView.layoutParams = LinearLayout.LayoutParams(80, 80)
             var resId = drawDice(n)
             imageView.setImageResource(resId)
             rollHistory.addView(imageView)

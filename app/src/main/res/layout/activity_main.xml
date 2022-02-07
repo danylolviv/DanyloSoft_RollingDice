@@ -33,16 +33,29 @@
         android:max="5"
         android:progress="2" />
 
-    <Button
-        android:id="@+id/diceRoller"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Roll" />
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/diceRoller"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:text="Roll" />
+        <Button
+            android:id="@+id/autoRoller"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/design_default_color_error"
+            android:text="Auto" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:text="History is not was, it is."
         android:textSize="25dp"
         android:layout_gravity="center"/>
     <LinearLayout
@@ -53,6 +66,24 @@
 
         android:orientation="vertical" />
 
+    <LinearLayout
+        android:id="@+id/distribution"
+        android:layout_width="390dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout android:id="@+id/dis2" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis3" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis4" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis5" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis6" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis7" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis8" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis9" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis10" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis11" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/dis12" android:layout_width="32dp" android:layout_height="match_parent" android:orientation="vertical"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
