@@ -1,6 +1,8 @@
 package danylosoft.rollingdice
 
-class HistoryManager {
+import java.io.Serializable
+
+class HistoryManager : Serializable{
 
     var historyList = mutableListOf<String>("0","0","0","0","0")
     public var doubleCount = 0

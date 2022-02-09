@@ -2,13 +2,12 @@ package danylosoft.rollingdice
 
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.SeekBar
+import android.os.PersistableBundle
+import android.widget.*
 import android.widget.SeekBar.OnSeekBarChangeListener
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
 
 
@@ -22,14 +21,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (savedInstanceState != null){
+            var state = savedInstanceState.getSerializable("historyObj") as HistoryManager
+            historyManager = state
+            diceDrawer = DrawDice(state)
+            diceDrawer.default(this, diceContainer)
 
-        historyManager = HistoryManager()
-        diceDrawer = DrawDice(historyManager)
-        diceDrawer.default(this, diceContainer )
+            updateHistory()
+        }
+        if (savedInstanceState == null) {
+            historyManager = HistoryManager()
+            diceDrawer = DrawDice(historyManager)
+            diceDrawer.default(this, diceContainer)
+        }
 
         diceRoller.setOnClickListener{c -> rollDice()}
         autoRoller.setOnClickListener{a -> autoRoll()}
-
         numberOfDice.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 diceCount = i
@@ -58,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun addDist() {
         val imageView = ImageView(this)
-        imageView.layoutParams = LinearLayout.LayoutParams(50, 50)
+        imageView.layoutParams = LinearLayout.LayoutParams(20, 20)
         var resId = R.drawable.hex
         imageView.setImageResource(resId)
         when (historyManager.doubleCount) {
@@ -77,6 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun autoRoll() {
+        Toast.makeText(this, "Happy roll", Toast.LENGTH_LONG).show()
         dis2.removeAllViews()
         dis3.removeAllViews()
         dis4.removeAllViews()
@@ -88,10 +96,16 @@ class MainActivity : AppCompatActivity() {
         dis10.removeAllViews()
         dis11.removeAllViews()
         dis12.removeAllViews()
-        for (i in 1..40){
-            //delay(2, TimeUnit.MILLISECONDS)
+        for (i in 1..10){
+            //Thread.sleep(500)
             rollDice()
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putSerializable("historyObj", historyManager)
+    }
+
 
 }

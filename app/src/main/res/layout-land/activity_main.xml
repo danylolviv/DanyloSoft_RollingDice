@@ -28,7 +28,7 @@
     <SeekBar
         android:id="@+id/numberOfDice"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="match_parent"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:max="5"
         android:progress="2" />
@@ -37,9 +37,10 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/diceRoller"
-            android:layout_width="250dp"
+            android:layout_width="153dp"
             android:layout_height="80dp"
             android:text="Roll" />
         <Button
@@ -48,6 +49,14 @@
             android:layout_height="80dp"
             android:backgroundTint="@color/design_default_color_error"
             android:text="Auto" />
+
+        <LinearLayout
+            android:id="@+id/historyContainer"
+            android:layout_width="316dp"
+            android:layout_height="26dp"
+            android:layout_marginBottom="30dp"
+
+            android:orientation="vertical" />
     </LinearLayout>
 
 
@@ -58,13 +67,6 @@
         android:text="History is not was, it is."
         android:textSize="25dp"
         android:layout_gravity="center"/>
-    <LinearLayout
-        android:id="@+id/historyContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-
-        android:orientation="vertical" />
 
     <LinearLayout
         android:id="@+id/distribution"
