@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.marginRight
+import androidx.core.view.setMargins
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -34,10 +35,10 @@ class DrawDice {
             val b = ran.nextInt(6)
             val random = b + 1
             val imageView = ImageView(mainActivity,  )
-            imageView.layoutParams = LinearLayout.LayoutParams(200, 200)
+            imageView.layoutParams = LinearLayout.LayoutParams(150, 150)
 
             var parLay = imageView.layoutParams as ViewGroup.MarginLayoutParams
-            parLay.setMargins(20,20,20,20)
+            parLay.setMargins(10)
 
             var resId = drawDice(random)
             imageView.setImageResource(resId)
@@ -60,7 +61,11 @@ class DrawDice {
             hisString = hisString + random + ","
 
             val imageView = ImageView(mainActivity)
-            imageView.layoutParams = LinearLayout.LayoutParams(200, 200)
+            imageView.layoutParams = LinearLayout.LayoutParams(150, 150)
+
+            var parLay = imageView.layoutParams as ViewGroup.MarginLayoutParams
+            parLay.setMargins(10)
+
             var resId = drawDice(random)
             imageView.setImageResource(resId)
             diceContainer.addView(imageView)

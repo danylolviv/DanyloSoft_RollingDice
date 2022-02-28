@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         autoRoller.setOnClickListener{a -> autoRoll()}
         numberOfDice.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
-                diceCount = i
+                diceCount = i+1
                 rollDice()
             }
             override fun onStartTrackingTouch(seekBar: SeekBar) {}
