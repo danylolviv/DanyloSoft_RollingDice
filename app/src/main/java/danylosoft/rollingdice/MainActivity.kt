@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         numberOfDice.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 diceCount = i+1
-                rollDice()
             }
             override fun onStartTrackingTouch(seekBar: SeekBar) {}
             override fun onStopTrackingTouch(seekBar: SeekBar) {}
