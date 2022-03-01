@@ -8,9 +8,6 @@ import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.activity_main.*
-import danylosoft.rollingdice.DrawDice
-import kotlinx.coroutines.delay
-import java.util.concurrent.TimeUnit
 
 
 class HistoryActivity : AppCompatActivity() {
@@ -18,11 +15,11 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        val drawHistory: Array<String> = DrawDice.getDraw
+       val drawHistory = intent.getSerializableExtra("history")
 
-        /* val adapter : ListAdapter  = ArrayAdapter<String>(this,
+        /*val adapter : ListAdapter  = ArrayAdapter(MutableList<String>)(this,
              android.R.layout.simple_list_item_1,
-             drawHistory)    */
+             drawHistory) */
 
         //   lvHistory.adapter = adapter
     }

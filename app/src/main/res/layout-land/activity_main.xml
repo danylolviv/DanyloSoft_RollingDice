@@ -31,7 +31,7 @@
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:max="5"
-        android:progress="2" />
+        android:progress="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,31 +42,26 @@
             android:id="@+id/diceRoller"
             android:layout_width="153dp"
             android:layout_height="80dp"
+            android:layout_marginHorizontal="10dp"
             android:text="Roll" />
         <Button
             android:id="@+id/autoRoller"
             android:layout_width="120dp"
             android:layout_height="80dp"
+            android:layout_marginHorizontal="10dp"
             android:backgroundTint="@color/design_default_color_error"
             android:text="Auto" />
 
-        <LinearLayout
-            android:id="@+id/historyContainer"
-            android:layout_width="316dp"
-            android:layout_height="26dp"
-            android:layout_marginBottom="30dp"
+        <Button
+            android:id="@+id/historyBtn"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/design_default_color_error"
+            android:text="History" />
 
-            android:orientation="vertical" />
     </LinearLayout>
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="History is not was, it is."
-        android:textSize="25dp"
-        android:layout_gravity="center"/>
 
     <LinearLayout
         android:id="@+id/distribution"

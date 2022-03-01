@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
     private fun showHistory(){
         val intent = Intent(this, HistoryActivity::class.java)
         try {
+            intent.putExtra("history",historyManager)
             startActivity(intent)
         }
         catch (e : Exception){
