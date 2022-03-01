@@ -16,7 +16,7 @@ import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
-    var diceCount = 2;
+    var diceCount = 6;
     var historyManager = HistoryManager()
     var diceDrawer = DrawDice(historyManager);
 
@@ -24,17 +24,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState != null){
-            var state = savedInstanceState.getSerializable("historyObj") as HistoryManager
-            historyManager = state
-            diceDrawer = DrawDice(state)
-            diceDrawer.default(this, diceContainer)
+        try {
+            if (savedInstanceState != null){
+                var state = savedInstanceState.getSerializable("historyObj") as HistoryManager
+                historyManager = state
+                diceDrawer = DrawDice(state)
+                diceDrawer.default(this, diceContainer)
+            }
+            if (savedInstanceState == null) {
+                historyManager = HistoryManager()
+                diceDrawer = DrawDice(historyManager)
+                diceDrawer.default(this, diceContainer)
+            }
         }
-        if (savedInstanceState == null) {
-            historyManager = HistoryManager()
-            diceDrawer = DrawDice(historyManager)
-            diceDrawer.default(this, diceContainer)
+        catch (e : Exception){
+            Log.d("gaming", "I'm dead because $e");
         }
+
 
         historyBtn.setOnClickListener{ showHistory()}
         diceRoller.setOnClickListener{ rollDice()}
@@ -51,13 +57,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showHistory(){
         val intent = Intent(this, HistoryActivity::class.java)
-        try {
-            intent.putExtra("history",historyManager)
-            getResult.launch(intent)
-        }
-        catch (e : Exception){
-            Log.d("gaming", "I'm dead because $e");
-        }
+        intent.putExtra("history",historyManager)
+        getResult.launch(intent)
+
     }
 
     private val getResult =
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == Activity.RESULT_OK) {
-                historyManager.resetList();
+                historyManager.resetList()
             }
         }
 
