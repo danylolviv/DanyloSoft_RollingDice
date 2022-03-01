@@ -48,8 +48,8 @@ class HistoryActivity : AppCompatActivity() {
     {
         // these colors are used to toogle the background of the list items.
         private val colours = intArrayOf(
-            Color.parseColor("#AAAAAA"),
-            Color.parseColor("#CCCCCC")
+            Color.parseColor("#F8F8F8"),
+            Color.parseColor("#E8E8E8")
         )
 
         override fun getView(position: Int, v: View?, parent: ViewGroup): View {

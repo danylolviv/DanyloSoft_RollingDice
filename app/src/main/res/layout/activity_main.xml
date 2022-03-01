@@ -13,11 +13,12 @@
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "Roll The Dice!"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
-        android:textSize="25dp"
-        android:layout_gravity="center" />
+        android:text="Roll The Dice!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="35dp" />
     <LinearLayout
         android:id="@+id/diceContainer"
         android:layout_width="match_parent"
@@ -36,6 +37,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
         <Button
@@ -45,22 +47,22 @@
             android:layout_marginRight="10dp"
             android:backgroundTint="#3F51B5"
             android:text="Roll"
-            android:verticalScrollbarPosition="left"/>
+            android:verticalScrollbarPosition="left" />
 
         <Button
             android:id="@+id/autoRoller"
-            android:layout_width="180dp"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
             android:backgroundTint="#3F51B5"
             android:text="Auto"
-            android:verticalScrollbarPosition="right"/>
+            android:verticalScrollbarPosition="right" />
     </LinearLayout>
 
 
     <Button
         android:id="@+id/historyBtn"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:backgroundTint="#3F51B5"
         android:text="History" />
     <LinearLayout
