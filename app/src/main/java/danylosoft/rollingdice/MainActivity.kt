@@ -1,11 +1,13 @@
 package danylosoft.rollingdice
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
 import android.widget.SeekBar.OnSeekBarChangeListener
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
@@ -51,12 +53,22 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, HistoryActivity::class.java)
         try {
             intent.putExtra("history",historyManager)
-            startActivity(intent)
+            getResult.launch(intent)
         }
         catch (e : Exception){
             Log.d("gaming", "I'm dead because $e");
         }
     }
+
+    private val getResult =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                historyManager.resetList();
+            }
+        }
+
 
     private fun rollDice() {
         val numDice = diceCount

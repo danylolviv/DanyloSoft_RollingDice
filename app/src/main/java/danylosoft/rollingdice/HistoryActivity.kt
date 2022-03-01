@@ -1,5 +1,6 @@
 package danylosoft.rollingdice
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
@@ -20,14 +21,25 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        returnBtn.setOnClickListener{ onBackPressed()}
+        returnBtn.setOnClickListener{ finish()}
 
-       val history = intent.getSerializableExtra("history") as? HistoryManager
+        val history = intent.getSerializableExtra("history") as? HistoryManager
 
+        resetBtn.setOnClickListener{
+            if (history != null) {
+                resetHistory(history)
+            }
+        }
 
         val adapter = HistoryAdapter(this, history!!.getList())
 
            lvHistory.adapter = adapter
+    }
+
+    private fun resetHistory(historyManager: HistoryManager) {
+        historyManager.resetList()
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
     internal class HistoryAdapter(context: Context,

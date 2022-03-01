@@ -52,7 +52,8 @@ class DrawDice {
                 hM.doubleCount += random
             }
 
-            hisString = hisString + random + ","
+            hisString += random
+            if (i != childCount) hisString += "-"
 
             val imageView = ImageView(mainActivity)
             imageView.layoutParams = LinearLayout.LayoutParams(150, 150)
