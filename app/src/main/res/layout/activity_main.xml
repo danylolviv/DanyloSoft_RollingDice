@@ -44,20 +44,19 @@
             android:text="Roll" />
         <Button
             android:id="@+id/autoRoller"
-            android:layout_width="120dp"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
             android:backgroundTint="@color/design_default_color_error"
             android:text="Auto" />
     </LinearLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="History is not was, it is."
-        android:textSize="25dp"
-        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/historyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="History" />
     <LinearLayout
         android:id="@+id/historyContainer"
         android:layout_width="match_parent"

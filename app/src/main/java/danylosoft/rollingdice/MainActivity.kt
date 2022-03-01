@@ -1,14 +1,15 @@
 package danylosoft.rollingdice
 
+import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.PersistableBundle
+import android.util.Log
+import android.view.View
 import android.widget.*
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.delay
-import java.util.concurrent.TimeUnit
+import java.lang.Exception
+import kotlin.math.log
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +27,6 @@ class MainActivity : AppCompatActivity() {
             historyManager = state
             diceDrawer = DrawDice(state)
             diceDrawer.default(this, diceContainer)
-
-            updateHistory()
         }
         if (savedInstanceState == null) {
             historyManager = HistoryManager()
@@ -35,8 +34,9 @@ class MainActivity : AppCompatActivity() {
             diceDrawer.default(this, diceContainer)
         }
 
-        diceRoller.setOnClickListener{c -> rollDice()}
-        autoRoller.setOnClickListener{a -> autoRoll()}
+        historyBtn.setOnClickListener{ showHistory()}
+        diceRoller.setOnClickListener{ rollDice()}
+        autoRoller.setOnClickListener{ autoRoll()}
         numberOfDice.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 diceCount = i+1
@@ -47,20 +47,21 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    private fun showHistory(){
+        val intent = Intent(this, HistoryActivity::class.java)
+        try {
+            startActivity(intent)
+        }
+        catch (e : Exception){
+            Log.d("gaming", "I'm dead because $e");
+        }
+    }
+
     private fun rollDice() {
         val numDice = diceCount
         diceContainer.removeAllViews()
         diceDrawer.rollCustom(numDice, diceContainer, this)
-        updateHistory()
         addDist()
-    }
-
-    private fun updateHistory() {
-        historyContainer.removeAllViews()
-        val list = historyManager.getList()
-        for (i in 0..4){
-            diceDrawer.drawHistory(list[i], historyContainer, this)
-        }
     }
 
     private fun addDist() {

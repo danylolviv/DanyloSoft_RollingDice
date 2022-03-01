@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/AndroidStudioProjects/DanyloSoft_RollingDice/app/src/main/res/layout/activity_main.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DanyloSoft_RollingDice/app/src/main/res/layout/activity_history.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DanyloSoft_RollingDice/app/src/main/res/layout/activity_history2.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DanyloSoft_RollingDice/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.21727447509765627" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>

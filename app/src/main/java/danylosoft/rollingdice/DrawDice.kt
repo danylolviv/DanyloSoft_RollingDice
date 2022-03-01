@@ -1,15 +1,9 @@
 package danylosoft.rollingdice
 
-import android.graphics.drawable.GradientDrawable
-import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.view.marginRight
 import androidx.core.view.setMargins
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
@@ -73,24 +67,12 @@ class DrawDice {
         this.hM.addEntry(hisString)
     }
 
-    fun drawHistory(sequence: String, historyContainer: LinearLayout, mainActivity: MainActivity) {
-        val histNumlist = sequence
-            .split(",")
-            .mapNotNull { it.toIntOrNull() }
-        val rollHistory = LinearLayout(mainActivity)
-        rollHistory.setHorizontalGravity(2)
-        histNumlist.forEach{n ->
-            val imageView = ImageView(mainActivity)
-            imageView.layoutParams = LinearLayout.LayoutParams(80, 80)
-            var resId = drawDice(n)
-            imageView.setImageResource(resId)
-            rollHistory.addView(imageView)
-        }
+    fun addHistory(sequence: String, historyContainer: LinearLayout, mainActivity: MainActivity) {
+        //hM.addEntry(sequence.removeSurrounding("[", "]").split(","))
 
         // Text solution
         //val rollHistory = TextView(mainActivity)
         //rollHistory.text = sequence
-        historyContainer.addView(rollHistory)
 
 
         //        val intList = sequence
