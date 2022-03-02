@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun rollDice() {
+        historyManager.indexCount += 1
         val numDice = diceCount
         diceContainer.removeAllViews()
         diceDrawer.rollCustom(numDice, diceContainer, this)

@@ -5,7 +5,8 @@ import java.io.Serializable
 class HistoryManager : Serializable{
 
     var historyList = mutableListOf<String>()
-    public var doubleCount = 0
+    var doubleCount = 0
+    var indexCount = 0
 
     fun addEntry(str: String){
         historyList.add(0, str)
@@ -18,4 +19,5 @@ class HistoryManager : Serializable{
     fun resetList(){
         historyList = mutableListOf()
     }
+
 }

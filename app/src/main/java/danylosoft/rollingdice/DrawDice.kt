@@ -92,7 +92,7 @@ class DrawDice {
         }
         val sdf = SimpleDateFormat("hh:mm:ss")
         val timeStamp = sdf.format(Date())
-        this.hM.addEntry("Result: " + hisString + " Time: " + timeStamp)
+        this.hM.addEntry(hM.indexCount.toString() + " Result: " + hisString + " Time: " + timeStamp)
     }
 
     private fun drawDice(dieNumber: Int): Int {
