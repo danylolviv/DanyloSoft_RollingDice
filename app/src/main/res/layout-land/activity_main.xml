@@ -13,51 +13,61 @@
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "@string/header"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="25dp"
-        android:layout_gravity="center" />
+        android:text="Roll The Dice!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="35dp" />
+
     <LinearLayout
         android:id="@+id/diceContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:layout_marginLeft="190dp"
+        android:layout_centerHorizontal="true"
         android:orientation="horizontal" />
 
     <SeekBar
         android:id="@+id/numberOfDice"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="314dp"
+        android:layout_width="712dp"
         android:layout_height="wrap_content"
         android:max="5"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="25dp"
         android:progress="5" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginLeft="50dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/diceRoller"
-            android:layout_width="153dp"
+            android:layout_width="200dp"
             android:layout_height="80dp"
             android:layout_marginHorizontal="10dp"
+            android:backgroundTint="#3F51B5"
+            android:verticalScrollbarPosition="left"
             android:text="Roll" />
         <Button
             android:id="@+id/autoRoller"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="80dp"
             android:layout_marginHorizontal="10dp"
-            android:backgroundTint="@color/design_default_color_error"
+            android:backgroundTint="#3F51B5"
             android:text="Auto" />
 
         <Button
             android:id="@+id/historyBtn"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="10dp"
-            android:backgroundTint="@color/design_default_color_error"
+            android:backgroundTint="#3F51B5"
+            android:verticalScrollbarPosition="right"
             android:text="History" />
 
     </LinearLayout>
@@ -65,24 +75,76 @@
 
     <LinearLayout
         android:id="@+id/distribution"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <LinearLayout android:id="@+id/dis2" android:layout_width="10dp" android:layout_marginLeft="150dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis3" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis4" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis5" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis6" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis7" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis8" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis9" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis10" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis11" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
-        <LinearLayout android:id="@+id/dis12" android:layout_width="10dp" android:layout_height="match_parent" android:orientation="vertical"/>
+
+        <LinearLayout
+            android:id="@+id/dis2"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="150dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis3"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis4"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis5"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis6"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis7"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis8"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis9"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis10"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis11"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/dis12"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
 
     </LinearLayout>
-
-    // weight for the even distribution
-
-
 </LinearLayout>
