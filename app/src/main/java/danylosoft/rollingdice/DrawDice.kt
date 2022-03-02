@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.view.setMargins
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -16,6 +17,7 @@ class DrawDice {
     val imgResId4 = R.drawable.dice4
     val imgResId5 = R.drawable.dice5
     val imgResId6 = R.drawable.dice6
+
 
     val ran: Random
     val hM: HistoryManager
@@ -88,7 +90,9 @@ class DrawDice {
             imageView.setImageResource(resId)
             diceContainer.addView(imageView)
         }
-        this.hM.addEntry(hisString)
+        val sdf = SimpleDateFormat("hh:mm:ss")
+        val timeStamp = sdf.format(Date())
+        this.hM.addEntry("Result: " + hisString + " Time: " + timeStamp)
     }
 
     private fun drawDice(dieNumber: Int): Int {

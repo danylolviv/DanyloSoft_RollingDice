@@ -17,6 +17,7 @@ import kotlin.math.log
 class MainActivity : AppCompatActivity() {
 
     var diceCount = 6;
+    val currentTimestamp = System.currentTimeMillis()
     var historyManager = HistoryManager()
     var diceDrawer = DrawDice(historyManager);
 
