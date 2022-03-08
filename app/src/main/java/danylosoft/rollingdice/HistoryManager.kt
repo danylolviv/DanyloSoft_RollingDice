@@ -18,6 +18,7 @@ class HistoryManager : Serializable{
 
     fun resetList(){
         historyList = mutableListOf()
+        indexCount  = 0
     }
 
 }

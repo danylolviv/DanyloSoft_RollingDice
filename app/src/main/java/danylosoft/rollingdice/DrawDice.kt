@@ -13,7 +13,7 @@ class DrawDice {
 
     val imgResId1 = R.drawable.dice1
     val imgResId2 = R.drawable.dice2
-    val imgResId3 = R.drawable.dice6
+    val imgResId3 = R.drawable.dice3
     val imgResId4 = R.drawable.dice4
     val imgResId5 = R.drawable.dice5
     val imgResId6 = R.drawable.dice6
